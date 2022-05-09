@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h2>{{profile.user}}</h2>
+
+    <h4>{{profile.user.email}}</h4>
+
+
+    <h5>{{profile.phone_number}}</h5>
+
+    <a href="{% url 'accounts:profile_edit' %}" > <button type="submit" class="btn btn-default btn-lg">Edit Profile</button> </a>
+    <a href="{% url 'password_change' %}" > <button type="submit" class="btn btn-default btn-lg">password_change</button> </a>
+
+
+
+{% endblock body %}
