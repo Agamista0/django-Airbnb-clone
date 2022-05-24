@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
 
 # Application definition
 
@@ -38,11 +45,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # APP
     "property",
     "bootstrap4",
     'django_summernote',
     "taggit",
     'django_seed',
+    'blog',
+    "about",
+    'django_filters',
+    'rest_framework',
+      
+    'rest_framework.authtoken'
+    
+    
 
 ]
 
@@ -61,6 +77,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
         'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -74,7 +91,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
@@ -105,10 +121,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
+# LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -120,6 +136,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+gettext = lambda s: s 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

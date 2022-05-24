@@ -3,6 +3,7 @@ from .models import Profile
 from .forms import SignupForm , UserForm , ProfileForm
 from django.contrib.auth import authenticate , login
 from django.contrib import messages
+from property.models import PropertyBook
 # Create your views here.
 
 
@@ -20,6 +21,7 @@ def signup(request):
 
     else: ## show form
         form = SignupForm()
+        
 
     return render(request,'registration/signup.html',{'form':form})
 
@@ -53,3 +55,10 @@ def profile_edit(request):
         'userform' : userform , 
         'profileform' : profile_form ,
         })
+
+
+# property book for user
+def user_book (request):
+    mybook= PropertyBook.objects.filter(name=request.user)
+    return render(request, "profile/user_book.html",{"mybook":mybook})
+    

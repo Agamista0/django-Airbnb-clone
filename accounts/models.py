@@ -3,22 +3,14 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 # Create your models here.
-''' 
-    username
-    password 
-    first_name
-    last_name
-    email  
-     '''
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User , on_delete=models.CASCADE)
     img = models.ImageField(upload_to="profile" ,default="")
     phone_number = models.CharField(max_length=15,null=True , blank=True)
     addres = models.CharField(max_length=50 , blank=True, null=True)
-    # image
-    # age
-    # Job
+ 
 
     def __str__(self):
         return str(self.user)

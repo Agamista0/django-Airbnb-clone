@@ -1,33 +1,152 @@
-{% extends "base.html" %}
-{% load bootstrap4 %}
-{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-  {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
-  
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-      please login with an account that has access.</p>
-    {% else %}
-      <p>Please login to see this page.</p>
-    {% endif %}
-  {% endif %}
-  
-  <form method="post" action="{% url 'login' %}">
-    <div class ="row"> 
-      <div class ="col-md-4 m-5 mx-auto">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        {% buttons %}
-            <button type="submit" class="btn btn-primary">Submit</button>
-        {% endbuttons %}
-      </form>
-      
-      {# Assumes you setup the password_reset view in your URLconf #}
-      <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-    </div>
-  </div>
-      
-{% endblock body %}
+<!-- Mirrored from colorlib.com/etc/lf/Login_v16/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 May 2022 03:46:47 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+	<title>Login V16</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+
+	<meta name="robots" content="noindex, follow">
+	<script nonce="bc5b0340-0a1d-4990-874d-24af766acc03">
+		(function (w, d) {
+			! function (a, e, t, r) {
+				a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zaraz = {
+					deferred: []
+				}, a.zaraz.q = [], a.zaraz._f = function (e) {
+					return function () {
+						var t = Array.prototype.slice.call(arguments);
+						a.zaraz.q.push({
+							m: e,
+							a: t
+						})
+					}
+				};
+				for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e);
+				a.addEventListener("DOMContentLoaded", (() => {
+					var t = e.getElementsByTagName(r)[0],
+						z = e.createElement(r),
+						n = e.getElementsByTagName("title")[0];
+					for (n && (a.zarazData.t = e.getElementsByTagName("title")[0].text), a.zarazData.x = Math
+						.random(), a.zarazData.w = a.screen.width, a.zarazData.h = a.screen.height, a
+						.zarazData.j = a.innerHeight, a.zarazData.e = a.innerWidth, a.zarazData.l = a.location
+						.href, a.zarazData.r = e.referrer, a.zarazData.k = a.screen.colorDepth, a.zarazData
+						.n = e.characterSet, a.zarazData.o = (new Date).getTimezoneOffset(), a.zarazData
+						.q = []; a.zaraz.q.length;) {
+						const e = a.zaraz.q.shift();
+						a.zarazData.q.push(e)
+					}
+					z.defer = !0;
+					for (const e of [localStorage, sessionStorage]) Object.keys(e).filter((a => a.startsWith(
+						"_zaraz_"))).forEach((t => a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(
+						t))));
+					z.referrerPolicy = "origin", z.src = "../../../cdn-cgi/zaraz/sd0d9.js?z=" + btoa(
+						encodeURIComponent(JSON.stringify(a.zarazData))), t.parentNode.insertBefore(z, t)
+				}))
+			}(w, d, 0, "script");
+		})(window, document);
+	</script>
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'images/bg-01.jpg'%});">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5" method ="POST" action="{% url 'login' %}">
+					{% csrf_token %}
+					{% if form.errors %}
+						<p class="text-danger mx-5">
+							Your username and password didn't match.
+							Please try again.
+						</p>
+						{% endif %}
+					<div class="wrap-input100 validate-input" data-validate="Enter username">
+						<input class="input100" type="text" name="username" placeholder="User name">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+					<div class="container-login100-form-btn m-t-32">
+						<button type='submit' class="login100-form-btn">
+							Login
+						</button>
+					
+            </form> 
+				<!-- Sign in button -->            
+				<p class="mx-5">Not a member?<a data-toggle="tab" href="{% url 'accounts:signup'%}">Sign up</a></p>
+				
+						
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="dropDownSelect1"></div>
+
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+
+	<script src="{% static 'vendor/animsition/js/animsition.min.js'%}"></script>
+
+	<script src="{% static 'vendor/bootstrap/js/popper.js'%}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+
+	<script src="{% static 'vendor/select2/select2.min.js'%}"></script>
+
+	<script src="{% static 'vendor/daterangepicker/moment.min.js'%}"></script>
+	<script src="{% static 'vendor/daterangepicker/daterangepicker.js'%}"></script>
+
+	<script src="{% static 'vendor/countdowntime/countdowntime.js'%}"></script>
+
+	<script src="{% static 'js/main.js'%}"></script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"
+		integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+		data-cf-beacon='{"rayId":"70a868b23bbb6f65","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}'
+		crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from colorlib.com/etc/lf/Login_v16/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 May 2022 03:46:52 GMT -->
+
+</html>

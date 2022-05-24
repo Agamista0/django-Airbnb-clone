@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-15 05:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\property\models.py:12
+msgid "outher"
+msgstr "مستخدم"
+
+#: .\property\models.py:13
+msgid "title"
+msgstr "عنوان"
+
+#: .\property\models.py:14
+msgid "description"
+msgstr "وصف"
+
+#: .\property\models.py:15
+msgid "price"
+msgstr "سعر"
+
+#: .\property\models.py:16
+msgid "place"
+msgstr "مكان"
+
+#: .\property\models.py:17 .\property\models.py:41
+msgid "image"
+msgstr "صوره"
+
+#: .\property\models.py:18
+msgid "category"
+msgstr "فْئه"
+
+#: .\property\models.py:19
+msgid "slug"
+msgstr "اسلج"
+
+#: .\property\models.py:20
+msgid "created_at"
+msgstr "بتاريخ"
+
+#: .\property\models.py:24
+msgid "Properties"
+msgstr "غرف"
+
+#: .\property\models.py:48
+msgid "Property Image"
+msgstr "صوره الغرفه "
+
+#: .\property\models.py:49
+msgid "Property Images"
+msgstr "صور الغرفه"
+
+#: .\property\models.py:54 .\property\models.py:93
+msgid "name"
+msgstr "اسم الفئي"
+
+#: .\property\models.py:57 .\property\models.py:105
+msgid "PropertyBook"
+msgstr "ححز الغرف"
+
+#: .\property\models.py:58
+msgid "Categories"
+msgstr "الفئات"
+
+#: .\property\models.py:68
+msgid "property"
+msgstr "الغرفه"
+
+#: .\property\models.py:69
+msgid "author"
+msgstr "المستخدم"
+
+#: .\property\models.py:70
+msgid "rating"
+msgstr "تقيم"
+
+#: .\property\models.py:71
+msgid "feedback"
+msgstr "تعليقات"
+
+#: .\property\models.py:79
+msgid "PropertyReview"
+msgstr "مراجعة الغرفه"
+
+#: .\property\models.py:80
+msgid "PropertyReviews"
+msgstr "مراجعة الغرف"
+
+#: .\property\models.py:94
+msgid "email"
+msgstr "اميل"
+
+#: .\property\models.py:95
+msgid "date_from"
+msgstr "موعد بداالحجز "
+
+#: .\property\models.py:96
+msgid "date_to"
+msgstr "موعد انتهي الحجز"
+
+#: .\property\models.py:97
+msgid "guest"
+msgstr "العمله"
+
+#: .\property\models.py:98
+msgid "children"
+msgstr "الاطفال"
+
+#: .\property\models.py:106
+msgid "PropertyBooks"
+msgstr " ححز الغرف"
